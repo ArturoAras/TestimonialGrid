@@ -1,0 +1,158 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+main{
+    width: 100vw;
+    section{
+        width: 90%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows:min-content;
+        grid-row-gap: 20px;
+        grid-template-areas:
+        "Daniel"
+        "Jonathan"
+        "Jeanette"
+        "Patrick"
+        "Kira";
+        .div__cajaDaniel, .div__cajaJonathan, .div__cajaJeanette, .div__cajaPatrick, .div__cajaKira{
+            margin-top: 25px;
+            background-color: rgb(155, 63, 200);
+            border-radius: 5%;
+            position: relative;
+            grid-area: Daniel;
+            height: fit-content;
+            .signoComillas{
+                position: absolute;
+                right: 5%;
+                z-index: 0;
+            }
+            .div__infoDaniel, .div__infoJonathan, .div__infoJeanette, .div__infoPatrick, .div__infoKira{
+                width: 90%;
+                padding: 5% 5% 0;
+                display: flex;
+                align-items: center;
+                img{
+                    border: 1px solid rgb(255, 255, 255);
+                    border-radius: 50%;
+                }
+                div{
+                    width: 70%;
+                    margin-left: 10px;
+                    .p__nombreDaniel{
+                        font-size: 1.5rem;
+                        color: rgb(255, 255, 255);
+                    }
+                    .p__tituloDaniel{
+                        font-size: 1.1rem;
+                        color: rgb(200, 200, 200);
+                    }
+                }
+            }
+            .div__primerTestimonio{
+                width: 100%;
+                padding: 2% 5%;
+                z-index: 20;
+                position: relative;
+                .p__testimonio{
+                    color: rgb(255, 255, 255);
+                    font-size: 1.7rem;
+                    z-index: 2;
+                }
+            }
+            .div__segundoTestimonio{
+                width: 100%;
+                padding: 2% 5%;
+                p{
+                    font-size: 1.1rem;
+                    color: rgb(200, 200, 200)
+                }
+            }
+        }
+        .div__cajaJonathan, .div__cajaJeanette, .div__cajaPatrick, .div__cajaKira{
+            border-radius: 5%;
+            grid-area: Jonathan;
+            background-color: rgb(236, 147, 63);
+            .div__infoJonathan, .div__infoJeanette, .div__infoPatrick, .div__infoKira{
+                div{
+                    .p__nombreJonathan, .p__nombreJeanette, .p__nombrePatrick, .p__nombreKira{
+                        font-size: 1.5rem;
+                        color: rgb(0, 0, 0);
+                    }
+                    .p__tituloJonathan, .p__tituloJeanette, .p__tituloPatrick, .p__tituloKira{
+                        font-size: 1.1rem;
+                        color: rgb(50, 50, 50);
+                    }
+                }
+            }
+            .div__primerTestimonio{
+                padding: 2% 5%;
+                p{
+                    font-size: 1.7rem;
+                    z-index: 2;
+                }
+            }
+            .div__segundoTestimonio{
+                p{
+                    font-size: 1.1rem;
+                    color: rgb(0, 0, 0)
+                }
+            }
+        }
+        .div__cajaJeanette{
+            grid-area: Jeanette;
+            background-color: rgb(80, 231, 100);
+        }
+        .div__cajaPatrick{
+            grid-area: Patrick;
+            background-color: rgb(224, 208, 65);
+        }
+        .div__cajaKira{
+            grid-area: Kira;
+            background-color: rgb(226, 80, 80);
+        }
+    }
+    .attribution {
+        font-size: 11px;
+        text-align: center;
+        a{
+            color: hsl(228, 45%, 44%);
+        }
+    }
+    @media (min-width:768px){
+        section{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: repeat(4, min-content);
+            grid-template-areas:
+            "Daniel Daniel"
+            "Jonathan Jeanette"
+            "Patrick Kira"
+            "Patrick Kira";
+            grid-column-gap: 25px;
+        }
+    }
+    @media (min-width:1024px){
+        section{
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: 1fr 1fr;
+            grid-template-areas:
+            "Daniel Daniel Jonathan Jeanette"
+            "Patrick Patrick Kira Kira";
+            .div__cajaDaniel, .div__cajaJonathan, .div__cajaJeanette, .div__cajaPatrick{
+                height: 397px;
+            }
+        }
+    }
+    @media (min-width:1530px){
+        section{
+            .div__cajaKira{
+                height: 397px;
+            }
+        }
+    }
+}
